@@ -5,244 +5,394 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BDM Balmex — Fertilizer trade and storage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;500;600&amp;display=swap">
-<style>
-body{margin:0;background:#F3F1EC}
-a{color:#B5482A}a:hover{color:#8E361F}
-.nav-links a{color:#1C1F22;text-decoration:none}
-.nav-links a:hover{color:#B5482A}
-@media (max-width: 860px){.nav-links{display:none !important}}
-header a[href="#top"] span{white-space:nowrap}
-@media (max-width: 520px){header a[href="#contact"]{display:none !important}}
-</style>
-<style>html{scroll-behavior:smooth} section[id]{scroll-margin-top:76px}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div style="font-family: 'Source Sans 3', system-ui, sans-serif; color: #1C1F22; background: #F3F1EC; font-size: 18px; line-height: 1.55">
 
-<header style="position: sticky; top: 0; z-index: 10; background: #FFFFFF; border-bottom: 1px solid #DAD6CE">
-<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
-<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1C1F22">
-<span style="width: 36px; height: 36px; background: #B5482A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 20px">B</span>
-<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 20px; letter-spacing: 0.04em">BDM BALMEX</span>
-</a>
-<nav class="nav-links" aria-label="Main" style="display: flex; gap: 36px; font-weight: 600; font-size: 16px">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#facility">Facility</a>
-<a href="#contact">Contact</a>
-</nav>
-<div style="display: flex; align-items: center; gap: 16px">
-<div role="group" aria-label="Language" style="display: flex; border: 1px solid #DAD6CE; font-size: 14px; font-weight: 600">
-<button type="button" aria-pressed="true" style="min-width: 44px; height: 36px; border: 0; background: #1C1F22; color: #FFFFFF; font: inherit; cursor: pointer">EN</button>
-<button type="button" aria-pressed="false" style="min-width: 44px; height: 36px; border: 0; background: #FFFFFF; color: #1C1F22; font: inherit; cursor: pointer">ES</button>
-</div>
-<a href="#contact" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; background: #B5482A; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px">Get a quote</a>
-</div>
-</div>
+<a href="#main" class="skip-link" data-i18n="ui.skip">Skip to content</a>
+
+<header class="header" id="site-header">
+	<div class="header__inner">
+		<a href="#top" class="header__logo" aria-label="BDM Balmex">
+			<span class="header__logo-wrap">
+				<img src="assets/images/logo-light.png" alt="BDM Balmex" class="header__logo-img header__logo-img--light">
+				<img src="assets/images/logo-dark.png" alt="" aria-hidden="true" class="header__logo-img header__logo-img--dark">
+			</span>
+		</a>
+		<nav class="header__nav" aria-label="Main">
+			<a href="#about" class="header__nav-link" data-i18n="nav.about">About</a>
+			<a href="#services" class="header__nav-link" data-i18n="nav.services">Services</a>
+			<a href="#facility" class="header__nav-link" data-i18n="nav.facility">Facility</a>
+			<a href="#why" class="header__nav-link" data-i18n="nav.why">Why work with us</a>
+			<a href="#contact" class="header__nav-link" data-i18n="nav.contact">Contact</a>
+		</nav>
+		<div class="header__actions">
+            <a href="#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.quote">Get a quote</a>
+            <div class="header__lang" role="group" aria-label="Language / Idioma">
+				<button type="button" class="header__lang-btn header__lang-btn--active" data-lang-btn="en" lang="en" aria-pressed="true">EN</button>
+				<button type="button" class="header__lang-btn" data-lang-btn="es" lang="es" aria-pressed="false">ES</button>
+			</div>
+			<button type="button" class="header__menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu">
+				<span class="header__menu-btn-label" data-i18n="ui.menu">Menu</span>
+				<svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" class="header__menu-icon">
+					<path d="M2 6h14M2 12h14" class="header__menu-icon-bars"></path>
+					<path d="M4 4l10 10M14 4L4 14" class="header__menu-icon-close"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<nav class="header__mobile-nav" id="mobile-menu" aria-label="Mobile">
+		<a href="#about" class="header__mobile-link"><span data-i18n="nav.about">About</span><span class="header__mobile-index">01</span></a>
+		<a href="#services" class="header__mobile-link"><span data-i18n="nav.services">Services</span><span class="header__mobile-index">02</span></a>
+		<a href="#facility" class="header__mobile-link"><span data-i18n="nav.facility">Facility</span><span class="header__mobile-index">03</span></a>
+		<a href="#why" class="header__mobile-link"><span data-i18n="nav.why">Why work with us</span><span class="header__mobile-index">04</span></a>
+		<a href="#contact" class="header__mobile-link"><span data-i18n="nav.contact">Contact</span><span class="header__mobile-index">05</span></a>
+		<a href="#contact" class="btn btn--primary btn--block header__mobile-cta" data-i18n="nav.quote">Get a quote</a>
+	</nav>
 </header>
 
-<section id="top" style="position: relative; min-height: 720px; display: flex; flex-direction: column; justify-content: flex-end; background-color: #1C1F22; overflow: hidden">
-<img src="images/hero-entrance.jpg" alt="BDM Balmex warehouse entrance in Veracruz" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
-<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20,22,24,0.88) 0%, rgba(20,22,24,0.66) 45%, rgba(20,22,24,0.15) 100%)"></div>
-<div style="position: relative; max-width: 1240px; width: 100%; margin: 0 auto; padding: 120px 24px 56px; box-sizing: border-box">
-<div style="max-width: 720px">
-<p style="margin: 0 0 20px; color: #F0B49C; font-weight: 600; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">Fertilizer trade &amp; storage · Mexico</p>
-<h1 style="margin: 0 0 24px; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(40px, 5.4vw, 72px); line-height: 1.04; color: #FFFFFF">Fertilizers sourced, stored and delivered in Mexico</h1>
-<p style="margin: 0 0 36px; font-size: 21px; color: #E6E3DD; max-width: 600px">BDM Balmex trades sulphur, MOP and NPK fertilizers and rents out covered warehouse space in Veracruz, close to Mexico's main Gulf port, for fertilizers or any other goods.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 16px">
-<a href="#contact" style="display: inline-flex; align-items: center; height: 52px; padding: 0 28px; background: #B5482A; color: #FFFFFF; text-decoration: none; font-weight: 600">Request a quote</a>
-<a href="#facility" style="display: inline-flex; align-items: center; height: 52px; padding: 0 28px; border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 600">See our facility</a>
-</div>
-</div>
-<div style="margin-top: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-top: 1px solid rgba(255,255,255,0.3)">
-<div style="padding: 24px 24px 0 0; color: #FFFFFF"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 22px">Sulphur · MOP · NPK</div><div style="color: #CFCAC2; font-size: 16px">Core product range</div></div>
-<div style="padding: 24px 24px 0 0; color: #FFFFFF"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 22px">Covered storage in Veracruz</div><div style="color: #CFCAC2; font-size: 16px">Open to any company's goods</div></div>
-<div style="padding: 24px 24px 0 0; color: #FFFFFF"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 22px">Offices in Querétaro</div><div style="color: #CFCAC2; font-size: 16px">Head office</div></div>
-</div>
-</div>
-</section>
+<main id="main">
 
-<section id="about" style="background: #FFFFFF">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
-<div style="flex: 1 1 440px; min-width: 0">
-<p style="margin: 0 0 16px; color: #B5482A; font-weight: 600; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">About us</p>
-<h2 style="margin: 0 0 28px; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.1">A Mexican partner for fertilizer supply</h2>
-<p style="margin: 0 0 18px">BDM Balmex is a Mexican company specializing in the trade and storage of fertilizers. We supply sulphur, muriate of potash (MOP) and NPK compound fertilizers to distributors, blenders and agricultural producers.</p>
-<p style="margin: 0 0 18px">We built our covered warehouses in Veracruz for our own fertilizers, to the standard we needed. Now we share that space with other companies. They can store fertilizers or other goods with us, whether or not they buy our products.</p>
-<p style="margin: 0; color: #4F555B">Our head office is in Querétaro, and we work with partners in Mexico and abroad.</p>
-</div>
-<div style="flex: 1 1 440px; min-width: 0">
-<img src="images/about-aerial.jpg" alt="Aerial view of the Balmex warehouse complex" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover">
-</div>
-</div>
-</section>
+	<section id="top" class="hero">
+		<div class="hero__frame">
+			<img src="assets/images/hero-entrance.webp" alt="BDM Balmex warehouse entrance in Veracruz" class="hero__image" fetchpriority="high" data-i18n-alt="alt.hero">
+			<div class="hero__overlay" aria-hidden="true"></div>
+			<div class="hero__content">
+				<p class="hero__eyebrow">
+					<span class="hero__eyebrow-tick" aria-hidden="true"></span>
+					<span data-i18n="hero.eyebrow">Fertilizer trade &amp; storage · Mexico</span>
+				</p>
+				<div class="hero__row">
+					<h1 class="hero__title" id="hero-title" aria-label="Fertilizers sourced, stored and delivered in Mexico">
+						<span class="hero__word"><span class="hero__word-inner">Fertilizers</span></span>
+						<span class="hero__word"><span class="hero__word-inner">sourced,</span></span>
+						<span class="hero__word"><span class="hero__word-inner">stored</span></span>
+						<span class="hero__word"><span class="hero__word-inner">and</span></span>
+						<span class="hero__word"><span class="hero__word-inner">delivered</span></span>
+						<span class="hero__word"><span class="hero__word-inner">in</span></span>
+						<span class="hero__word"><span class="hero__word-inner hero__word-inner--accent">Mexico</span></span>
+					</h1>
+					<div class="hero__side">
+						<p class="hero__text" data-i18n="hero.description">BDM Balmex trades sulphur, MOP and NPK fertilizers and rents out covered warehouse space in Veracruz, close to Mexico's main Gulf port, for fertilizers or any other goods.</p>
+						<div class="hero__actions">
+							<a href="#contact" class="btn btn--light">
+								<span data-i18n="hero.primaryCta">Request a quote</span>
+								<span class="hero__cta-icon" aria-hidden="true">↗</span>
+							</a>
+							<a href="#facility" class="text-link text-link--light">
+								<span data-i18n="hero.secondaryCta">See our facility</span>
+							</a>
+						</div>
+					</div>
+				</div>
+                <div class="hero__facts">
+                    <div class="hero__fact">
+                        <span class="hero__fact-index">01</span>
+                        <div>
+                            <div class="hero__fact-title" data-i18n="hero.facts.0.title">Sulphur · MOP · NPK</div>
+                            <div class="hero__fact-text" data-i18n="hero.facts.0.description">Core product range</div>
+                        </div>
+                    </div>
+                    <div class="hero__fact">
+                        <span class="hero__fact-index">02</span>
+                        <div>
+                            <div class="hero__fact-title" data-i18n="hero.facts.1.title">Covered storage in Veracruz</div>
+                            <div class="hero__fact-text" data-i18n="hero.facts.1.description">Open to any company's goods</div>
+                        </div>
+                    </div>
+                    <div class="hero__fact">
+                        <span class="hero__fact-index">03</span>
+                        <div>
+                            <div class="hero__fact-title" data-i18n="hero.facts.2.title">Offices in Querétaro</div>
+                            <div class="hero__fact-text" data-i18n="hero.facts.2.description">Head office</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</section>
 
-<section id="services" style="background: #F3F1EC">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px">
-<div style="max-width: 720px; margin-bottom: 56px">
-<p style="margin: 0 0 16px; color: #B5482A; font-weight: 600; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">Services</p>
-<h2 style="margin: 0 0 20px; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.1">Two services, one supply chain</h2>
-<p style="margin: 0; color: #4F555B">We sell fertilizers and rent out covered warehouse space. Each service stands on its own: you can store your goods with us without buying from us, or combine both.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 32px">
+	<section id="about" class="about">
+		<div class="about__inner">
+			<div class="about__content reveal">
+				<p class="about__eyebrow" data-i18n="about.eyebrow">About us</p>
+				<h2 class="about__title" data-i18n="about.title">A Mexican partner for fertilizer supply</h2>
+				<p class="about__lead" data-i18n="about.p1">BDM Balmex is a Mexican company specializing in the trade and storage of fertilizers. We supply sulphur, muriate of potash (MOP) and NPK compound fertilizers to distributors, blenders and agricultural producers.</p>
+				<div class="about__notes">
+					<p data-i18n="about.p2">We built our covered warehouses in Veracruz for our own fertilizers, to the standard we needed. Now we share that space with other companies. They can store fertilizers or other goods with us, whether or not they buy our products.</p>
+					<p data-i18n="about.p3">Our head office is in Querétaro, and we work with partners in Mexico and abroad.</p>
+				</div>
+			</div>
+			<figure class="about__media reveal">
+				<div class="about__image-frame">
+					<img src="assets/images/about-aerial.webp" alt="Aerial view of the Balmex warehouse complex" loading="lazy" class="about__image" data-i18n-alt="alt.about">
+				</div>
+				<figcaption class="about__caption" data-i18n="alt.about">Aerial view of the Balmex warehouse complex</figcaption>
+			</figure>
+		</div>
+	</section>
 
-<article style="flex: 1 1 480px; min-width: 0; background: #FFFFFF; border: 1px solid #DAD6CE; padding: 40px; display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; align-items: center; gap: 16px">
-<span style="width: 52px; height: 52px; background: #1C1F22; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l5 5-5 5H3z"></path><path d="M7 12h6"></path></svg></span>
-<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px">Fertilizer trade</h3>
-</div>
-<p style="margin: 0; color: #4F555B">We source and supply mineral fertilizers in bulk and bagged form, with reliable quality and agreed delivery terms.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px">
-<div style="background: #F3F1EC; padding: 20px; border-top: 3px solid #D4A72C"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 19px; margin-bottom: 8px">Sulphur</div><div style="font-size: 15px; color: #4F555B; line-height: 1.45">For fertilizer production and as a soil amendment for sulphur-deficient soils.</div></div>
-<div style="background: #F3F1EC; padding: 20px; border-top: 3px solid #B5482A"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 19px; margin-bottom: 8px">MOP</div><div style="font-size: 15px; color: #4F555B; line-height: 1.45">Muriate of potash: a high-potassium fertilizer for direct application and blending.</div></div>
-<div style="background: #F3F1EC; padding: 20px; border-top: 3px solid #3E6B5A"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 19px; margin-bottom: 8px">NPK</div><div style="font-size: 15px; color: #4F555B; line-height: 1.45">Compound fertilizers with nitrogen, phosphorus and potassium, in a range of formulas.</div></div>
-</div>
-<a href="#contact" style="margin-top: auto; font-weight: 600; text-decoration: none">Ask about availability →</a>
-</article>
+	<section id="services" class="services">
+		<div class="services__inner">
+			<div class="services__intro reveal">
+				<div class="services__intro-main">
+					<p class="services__eyebrow" data-i18n="services.eyebrow">Services</p>
+					<h2 class="services__title" data-i18n="services.title">Two services, one supply chain</h2>
+				</div>
+				<p class="services__text" data-i18n="services.description">We sell fertilizers and rent out covered warehouse space. Each service stands on its own: you can store your goods with us without buying from us, or combine both.</p>
+			</div>
 
-<article style="flex: 1 1 480px; min-width: 0; background: #FFFFFF; border: 1px solid #DAD6CE; display: flex; flex-direction: column">
-<img src="images/storage-interior.jpg" alt="Inside a covered Balmex warehouse" style="display: block; width: 100%; height: 220px; object-fit: cover">
-<div style="padding: 40px; display: flex; flex-direction: column; gap: 24px; flex: 1">
-<div style="display: flex; align-items: center; gap: 16px">
-<span style="width: 52px; height: 52px; background: #1C1F22; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-5 9 5v12"></path><path d="M7 21v-8h10v8"></path><path d="M7 17h10"></path></svg></span>
-<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px">Covered storage</h3>
-</div>
-<span style="align-self: flex-start; background: #FBE9E2; color: #8E361F; font-size: 14px; font-weight: 600; padding: 6px 12px; letter-spacing: 0.04em">Available as a stand-alone service · Any goods</span>
-<p style="margin: 0; color: #4F555B">We built these warehouses for our own fertilizers, to the standard we wanted for our own product. Now we offer the same space to other companies. Store fertilizers or any other goods that need dry, covered storage, protected from rain and sun and ready for dispatch by truck.</p>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 17px">
-<li style="display: flex; gap: 12px"><span style="flex: 0 0 8px; height: 8px; margin-top: 10px; background: #B5482A"></span><span>Large warehouses for bulk volumes, plus smaller units for separate lots</span></li>
-<li style="display: flex; gap: 12px"><span style="flex: 0 0 8px; height: 8px; margin-top: 10px; background: #B5482A"></span><span>Loading and unloading with forklifts and loaders</span></li>
-<li style="display: flex; gap: 12px"><span style="flex: 0 0 8px; height: 8px; margin-top: 10px; background: #B5482A"></span><span>Short-term and long-term storage, with no purchase from us required</span></li>
-<li style="display: flex; gap: 12px"><span style="flex: 0 0 8px; height: 8px; margin-top: 10px; background: #B5482A"></span><span>Gated site with a security post</span></li>
-</ul>
-<a href="#contact" style="margin-top: auto; font-weight: 600; text-decoration: none">Book storage space →</a>
-</div>
-</article>
+			<article class="services__item reveal">
+				<div class="services__item-main">
+					<h3 class="services__item-title" data-i18n="services.trade.title">Fertilizer trade</h3>
+					<p class="services__item-text" data-i18n="services.trade.description">We source and supply mineral fertilizers in bulk and bagged form, with reliable quality and agreed delivery terms.</p>
+					<a href="#contact" class="text-link">
+						<span data-i18n="services.trade.cta">Ask about availability</span>
+						<span aria-hidden="true">→</span>
+					</a>
+				</div>
+				<div class="services__products">
+					<div class="services__product">
+						<div class="services__product-head">
+							<span class="services__product-index">01</span>
+							<span class="services__product-dot services__product-dot--a" aria-hidden="true"></span>
+						</div>
+						<div class="services__product-name" data-i18n="services.trade.products.0.name">Sulphur</div>
+						<div class="services__product-text" data-i18n="services.trade.products.0.description">For fertilizer production and as a soil amendment for sulphur-deficient soils.</div>
+					</div>
+					<div class="services__product">
+						<div class="services__product-head">
+							<span class="services__product-index">02</span>
+							<span class="services__product-dot services__product-dot--b" aria-hidden="true"></span>
+						</div>
+						<div class="services__product-name" data-i18n="services.trade.products.1.name">MOP</div>
+						<div class="services__product-text" data-i18n="services.trade.products.1.description">Muriate of potash: a high-potassium fertilizer for direct application and blending.</div>
+					</div>
+					<div class="services__product">
+						<div class="services__product-head">
+							<span class="services__product-index">03</span>
+							<span class="services__product-dot services__product-dot--c" aria-hidden="true"></span>
+						</div>
+						<div class="services__product-name" data-i18n="services.trade.products.2.name">NPK</div>
+						<div class="services__product-text" data-i18n="services.trade.products.2.description">Compound fertilizers with nitrogen, phosphorus and potassium, in a range of formulas.</div>
+					</div>
+				</div>
+			</article>
 
-</div>
-</div>
-</section>
+			<article class="services__item services__item--media reveal">
+				<div class="services__item-media">
+					<img src="assets/images/storage-interior.webp" alt="Inside a covered Balmex warehouse" loading="lazy" class="services__item-image" data-i18n-alt="alt.storage">
+				</div>
+				<div class="services__item-aside">
+					<div class="services__item-aside-head">
+						<span class="services__pill">
+							<span class="services__pill-dot" aria-hidden="true"></span>
+							<span data-i18n="services.storage.badge">Available as a stand-alone service · Any goods</span>
+						</span>
+					</div>
+					<h3 class="services__item-title" data-i18n="services.storage.title">Covered storage</h3>
+					<p class="services__item-text" data-i18n="services.storage.description">We built these warehouses for our own fertilizers, to the standard we wanted for our own product. Now we offer the same space to other companies. Store fertilizers or any other goods that need dry, covered storage, protected from rain and sun and ready for dispatch by truck.</p>
+					<ul class="services__list">
+						<li class="services__list-item">
+							<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.5" class="services__list-icon"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+							<span data-i18n="services.storage.features.0">Large warehouses for bulk volumes, plus smaller units for separate lots</span>
+						</li>
+						<li class="services__list-item">
+							<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.5" class="services__list-icon"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+							<span data-i18n="services.storage.features.1">Loading and unloading with forklifts and loaders</span>
+						</li>
+						<li class="services__list-item">
+							<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.5" class="services__list-icon"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+							<span data-i18n="services.storage.features.2">Short-term and long-term storage, with no purchase from us required</span>
+						</li>
+						<li class="services__list-item">
+							<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.5" class="services__list-icon"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+							<span data-i18n="services.storage.features.3">Gated site with a security post</span>
+						</li>
+					</ul>
+					<a href="#contact" class="btn btn--primary">
+						<span data-i18n="services.storage.cta">Book storage space</span>
+						<span aria-hidden="true">→</span>
+					</a>
+				</div>
+			</article>
+		</div>
+	</section>
 
-<section id="facility" style="background: #1C1F22; color: #FFFFFF">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px">
-<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-end; margin-bottom: 48px">
-<div style="flex: 1 1 520px; min-width: 0">
-<p style="margin: 0 0 16px; color: #F0B49C; font-weight: 600; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">Our facility</p>
-<h2 style="margin: 0 0 20px; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.1">Warehouse complex in Veracruz</h2>
-<p style="margin: 0; font-size: 20px; color: #E6E3DD">A dedicated logistics site in Veracruz, on Mexico's Gulf coast, built for receiving, storing and dispatching fertilizers.</p>
-</div>
-<p style="flex: 1 1 360px; min-width: 0; margin: 0; color: #CFCAC2">Part of the complex is already running, and more buildings are being added in phases. Storage space is available now, and we can plan larger volumes with partners in advance.</p>
-</div>
+	<section id="facility" class="facility">
+		<div class="facility__inner">
+			<div class="facility__header reveal">
+				<div class="facility__header-main">
+					<p class="facility__eyebrow" data-i18n="facility.eyebrow">Our facility</p>
+					<h2 class="facility__title" data-i18n="facility.title">Warehouse complex in Veracruz</h2>
+					<p class="facility__lead" data-i18n="facility.description">A dedicated logistics site in Veracruz, on Mexico's Gulf coast, built for receiving, storing and dispatching fertilizers.</p>
+				</div>
+				<p class="facility__note" data-i18n="facility.phaseNote">Part of the complex is already running, and more buildings are being added in phases. Storage space is available now, and we can plan larger volumes with partners in advance.</p>
+			</div>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 64px">
-<img src="images/facility-aerial.jpg" alt="Aerial view of the site among green fields" style="display: block; width: 100%; height: 280px; object-fit: cover">
-<img src="images/facility-facade.jpg" alt="Warehouse facade" style="display: block; width: 100%; height: 280px; object-fit: cover">
-<img src="images/facility-interior.jpg" alt="Bagged product stored inside the warehouse" style="display: block; width: 100%; height: 280px; object-fit: cover">
-<img src="images/facility-night.jpg" alt="Entrance with the BDM Balmex sign at night" style="display: block; width: 100%; height: 280px; object-fit: cover">
-</div>
+			<div class="facility__gallery-row facility__gallery-row--tall">
+				<figure class="facility__figure facility__figure--wide reveal">
+					<div class="facility__image-frame">
+						<img src="assets/images/hero-entrance.webp" alt="Warehouse facade" loading="lazy" class="facility__image" data-i18n-alt="alt.facade">
+					</div>
+				</figure>
+				<figure class="facility__figure facility__figure--narrow reveal">
+					<div class="facility__image-frame">
+						<img src="assets/images/facility-aerial.webp" alt="Aerial view of the site among green fields" loading="lazy" class="facility__image" data-i18n-alt="alt.aerial">
+					</div>
+				</figure>
+			</div>
+			<div class="facility__gallery-row facility__gallery-row--short">
+				<figure class="facility__figure facility__figure--narrow reveal">
+					<div class="facility__image-frame">
+						<img src="assets/images/facility-interior.webp" alt="Bagged product stored inside the warehouse" loading="lazy" class="facility__image facility__image--crop" data-i18n-alt="alt.interior">
+					</div>
+				</figure>
+				<figure class="facility__figure facility__figure--wide reveal">
+					<div class="facility__image-frame">
+						<img src="assets/images/facility-night.webp" alt="Entrance with the BDM Balmex sign at night" loading="lazy" class="facility__image" data-i18n-alt="alt.night">
+					</div>
+				</figure>
+			</div>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px 32px; margin-bottom: 64px">
-<div style="border-top: 1px solid #4A5056; padding-top: 24px"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 8px">Main warehouses</div><div style="color: #CFCAC2; font-size: 17px">Large-span covered buildings for bulk storage</div></div>
-<div style="border-top: 1px solid #4A5056; padding-top: 24px"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 8px">Secondary warehouses</div><div style="color: #CFCAC2; font-size: 17px">Smaller units for separate products and lots</div></div>
-<div style="border-top: 1px solid #4A5056; padding-top: 24px"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 8px">Truck access</div><div style="color: #CFCAC2; font-size: 17px">Separate vehicle and pedestrian entrances, internal roads and truck parking</div></div>
-<div style="border-top: 1px solid #4A5056; padding-top: 24px"><div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 8px">On-site office and security</div><div style="color: #CFCAC2; font-size: 17px">Administrative area and a controlled entrance with a guard post</div></div>
-</div>
+			<div class="facility__features">
+				<div class="facility__feature reveal">
+					<span class="facility__feature-index">01</span>
+					<h3 class="facility__feature-title" data-i18n="facility.features.0.title">Main warehouses</h3>
+					<p class="facility__feature-text" data-i18n="facility.features.0.description">Large-span covered buildings for bulk storage</p>
+				</div>
+				<div class="facility__feature reveal">
+					<span class="facility__feature-index">02</span>
+					<h3 class="facility__feature-title" data-i18n="facility.features.1.title">Secondary warehouses</h3>
+					<p class="facility__feature-text" data-i18n="facility.features.1.description">Smaller units for separate products and lots</p>
+				</div>
+				<div class="facility__feature reveal">
+					<span class="facility__feature-index">03</span>
+					<h3 class="facility__feature-title" data-i18n="facility.features.2.title">Truck access</h3>
+					<p class="facility__feature-text" data-i18n="facility.features.2.description">Separate vehicle and pedestrian entrances, internal roads and truck parking</p>
+				</div>
+				<div class="facility__feature reveal">
+					<span class="facility__feature-index">04</span>
+					<h3 class="facility__feature-title" data-i18n="facility.features.3.title">On-site office and security</h3>
+					<p class="facility__feature-text" data-i18n="facility.features.3.description">Administrative area and a controlled entrance with a guard post</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-<div style="display: flex; flex-wrap: wrap; gap: 0; background: #2B3035">
-<div style="flex: 1 1 360px; min-width: 0; padding: 40px; display: flex; flex-direction: column; gap: 20px; justify-content: center">
-<div style="display: flex; gap: 14px; align-items: flex-start">
-<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F0B49C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 26px; margin-top: 2px"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
-<div><div style="font-weight: 600; margin-bottom: 4px">Warehouse address</div><div style="color: #CFCAC2">Calle Río Támesis 236, Unidad Habitacional Valente Díaz, Veracruz, Ver., Mexico</div></div>
-</div>
-<a href="https://maps.google.com/?q=Calle+R%C3%ADo+T%C3%A1mesis+236+Valente+D%C3%ADaz+Veracruz" style="align-self: flex-start; display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 600">Open in Google Maps</a>
-</div>
-<div style="flex: 1 1 520px; min-width: 0; min-height: 300px; background-color: #3A4046; background-image: linear-gradient(#454C53 1px, transparent 1px), linear-gradient(90deg, #454C53 1px, transparent 1px); background-size: 40px 40px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: #CFCAC2; font-size: 15px">
-<svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="#B5482A" stroke="#FFFFFF" stroke-width="1.2"><path d="M12 22s-7-6.4-7-12a7 7 0 0 1 14 0c0 5.6-7 12-7 12z"></path><circle cx="12" cy="10" r="2.5" fill="#FFFFFF"></circle></svg>
-<span>Embedded map · Veracruz warehouses</span>
-</div>
-</div>
-</div>
-</section>
+	<section id="why" class="why">
+		<div class="why__inner">
+			<div class="why__header reveal">
+				<p class="why__eyebrow">BDM Balmex</p>
+				<h2 class="why__title" data-i18n="why.title">Why work with us</h2>
+			</div>
+			<div class="why__grid">
+				<div class="why__item reveal">
+					<div class="why__icon-wrap">
+						<span class="why__icon">
+							<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6M4 6v12"></path></svg>
+						</span>
+					</div>
+					<h3 class="why__item-title" data-i18n="why.items.0.title">Trade and storage in one place</h3>
+					<p class="why__item-text" data-i18n="why.items.0.description">Buy and store with one partner, or use only our warehouses. Either way, there are fewer handovers and fewer delays.</p>
+				</div>
+				<div class="why__item reveal">
+					<div class="why__icon-wrap">
+						<span class="why__icon">
+							<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l2 3h14l2-3M5 17V11h14v6M9 11V6h6v5M12 3v3"></path></svg>
+						</span>
+					</div>
+					<h3 class="why__item-title" data-i18n="why.items.1.title">Close to the port</h3>
+					<p class="why__item-text" data-i18n="why.items.1.description">Our Veracruz location shortens the route from vessel to warehouse to customer.</p>
+				</div>
+				<div class="why__item reveal">
+					<div class="why__icon-wrap">
+						<span class="why__icon">
+							<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11l10-6 10 6M5 10v10h14V10M12 13c-1.5 2-2 3-2 4a2 2 0 0 0 4 0c0-1-.5-2-2-4z"></path></svg>
+						</span>
+					</div>
+					<h3 class="why__item-title" data-i18n="why.items.2.title">Goods kept dry</h3>
+					<p class="why__item-text" data-i18n="why.items.2.description">Covered warehouses protect fertilizers and other goods from moisture and weather.</p>
+				</div>
+				<div class="why__item reveal">
+					<div class="why__icon-wrap">
+						<span class="why__icon">
+							<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M6 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0"></path></svg>
+						</span>
+					</div>
+					<h3 class="why__item-title" data-i18n="why.items.3.title">Flexible terms</h3>
+					<p class="why__item-text" data-i18n="why.items.3.description">Volumes, storage periods and delivery conditions are agreed to fit each partner.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-<section style="background: #FFFFFF">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px">
-<h2 style="margin: 0 0 56px; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.1">Why work with us</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px 32px">
-<div>
-<svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"></path><path d="M14 6l6 6-6 6"></path><path d="M4 6v12"></path></svg>
-<h3 style="margin: 20px 0 10px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Trade and storage in one place</h3>
-<p style="margin: 0; color: #4F555B; font-size: 17px">Buy and store with one partner, or use only our warehouses. Either way, there are fewer handovers and fewer delays.</p>
-</div>
-<div>
-<svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l2 3h14l2-3"></path><path d="M5 17V11h14v6"></path><path d="M9 11V6h6v5"></path><path d="M12 3v3"></path></svg>
-<h3 style="margin: 20px 0 10px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Close to the port</h3>
-<p style="margin: 0; color: #4F555B; font-size: 17px">Our Veracruz location shortens the route from vessel to warehouse to customer.</p>
-</div>
-<div>
-<svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11l10-6 10 6"></path><path d="M5 10v10h14V10"></path><path d="M12 13c-1.5 2-2 3-2 4a2 2 0 0 0 4 0c0-1-.5-2-2-4z"></path></svg>
-<h3 style="margin: 20px 0 10px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Goods kept dry</h3>
-<p style="margin: 0; color: #4F555B; font-size: 17px">Covered warehouses protect fertilizers and other goods from moisture and weather.</p>
-</div>
-<div>
-<svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B5482A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10"></path><path d="M18 7h2"></path><circle cx="16" cy="7" r="2"></circle><path d="M4 17h2"></path><path d="M10 17h10"></path><circle cx="8" cy="17" r="2"></circle></svg>
-<h3 style="margin: 20px 0 10px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Flexible terms</h3>
-<p style="margin: 0; color: #4F555B; font-size: 17px">Volumes, storage periods and delivery conditions are agreed to fit each partner.</p>
-</div>
-</div>
-</div>
-</section>
+	<div class="facility-banner reveal">
+		<img src="assets/images/facility-front-banner.webp" alt="Warehouse facade" loading="lazy" class="facility-banner__image" data-i18n-alt="alt.facade">
+	</div>
 
-<section id="contact" style="background: #F3F1EC">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 64px">
-<div style="flex: 1 1 380px; min-width: 0">
-<p style="margin: 0 0 16px; color: #B5482A; font-weight: 600; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">Contact</p>
-<h2 style="margin: 0 0 24px; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.1">Let's talk about your next shipment</h2>
-<p style="margin: 0 0 36px; color: #4F555B">Tell us what you need to buy or store, the volume and the storage period. Call or write to us, and we will come back with an offer.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 16px">
-<a href="tel:+522224268120" style="display: inline-flex; align-items: center; height: 52px; padding: 0 28px; background: #B5482A; color: #FFFFFF; text-decoration: none; font-weight: 600">Call us</a>
-<a href="mailto:jp@bdmbalmex.com" style="display: inline-flex; align-items: center; height: 52px; padding: 0 28px; border: 1px solid #1C1F22; color: #1C1F22; text-decoration: none; font-weight: 600">Write to us</a>
-</div>
-</div>
-<div style="flex: 1.4 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
-<div style="background: #FFFFFF; border: 1px solid #DAD6CE; padding: 28px">
-<div style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #B5482A; margin-bottom: 10px">Head office</div>
-<div style="font-size: 17px">Calle Bosques de Versalles 63, Colinas del Bosque 2a Sección, 76905 Santiago de Querétaro, Qro., Mexico</div>
-</div>
-<div style="background: #FFFFFF; border: 1px solid #DAD6CE; padding: 28px">
-<div style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #B5482A; margin-bottom: 10px">Warehouses</div>
-<div style="font-size: 17px">Calle Río Támesis 236, Unidad Habitacional Valente Díaz, Veracruz, Ver., Mexico</div>
-</div>
-<div style="background: #FFFFFF; border: 1px solid #DAD6CE; padding: 28px">
-<div style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #B5482A; margin-bottom: 10px">Phone</div>
-<a href="tel:+522224268120" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 22px; color: #1C1F22; text-decoration: none">+52 222 426 8120</a>
-</div>
-<div style="background: #FFFFFF; border: 1px solid #DAD6CE; padding: 28px">
-<div style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #B5482A; margin-bottom: 10px">Email</div>
-<a href="mailto:jp@bdmbalmex.com" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 22px; color: #1C1F22; text-decoration: none">jp@bdmbalmex.com</a>
-</div>
-</div>
-</div>
-</section>
+	<section id="contact" class="contact">
+		<div class="contact__inner">
+			<div class="contact__intro reveal">
+				<p class="contact__eyebrow" data-i18n="contact.eyebrow">Contact</p>
+				<h2 class="contact__title" data-i18n="contact.title">Let's talk about your next shipment</h2>
+				<p class="contact__text" data-i18n="contact.description">Tell us what you need to buy or store, the volume and the storage period. Call or write to us, and we will come back with an offer.</p>
+				<div class="contact__actions">
+					<a href="tel:+522224268120" class="btn btn--primary" data-i18n="contact.callCta">Call us</a>
+					<a href="mailto:jp@bdmbalmex.com" class="btn btn--outline" data-i18n="contact.emailCta">Write to us</a>
+				</div>
+			</div>
+			<dl class="contact__details reveal">
+				<div class="contact__detail">
+					<dt class="contact__detail-label" data-i18n="contact.phoneLabel">Phone</dt>
+					<dd class="contact__detail-value"><a href="tel:+522224268120" class="contact__detail-link">+52 222 426 8120</a></dd>
+				</div>
+				<div class="contact__detail">
+					<dt class="contact__detail-label" data-i18n="contact.emailLabel">Email</dt>
+					<dd class="contact__detail-value"><a href="mailto:jp@bdmbalmex.com" class="contact__detail-link">jp@bdmbalmex.com</a></dd>
+				</div>
+				<div class="contact__detail">
+					<dt class="contact__detail-label" data-i18n="contact.headOfficeLabel">Head office</dt>
+					<dd class="contact__detail-value" data-i18n="c.contactHeadOfficeAddress">Calle Bosques de Versalles 63, Colinas del Bosque 2a Sección, 76905 Santiago de Querétaro, Qro., Mexico</dd>
+				</div>
+				<div class="contact__detail">
+					<dt class="contact__detail-label" data-i18n="contact.warehousesLabel">Warehouses</dt>
+					<dd class="contact__detail-value" data-i18n="c.veracruzAddress">Calle Río Támesis 236, Unidad Habitacional Valente Díaz, Veracruz, Ver., Mexico</dd>
+				</div>
+			</dl>
+		</div>
+	</section>
 
-<footer style="background: #141618; color: #CFCAC2; font-size: 15px">
-<div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 40px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between">
-<div style="flex: 1 1 300px; min-width: 0">
-<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
-<span style="width: 32px; height: 32px; background: #B5482A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 18px">B</span>
-<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.04em; color: #FFFFFF">BDM BALMEX</span>
-</div>
-<div>Fertilizer trade and covered storage in Mexico</div>
-</div>
-<div style="flex: 1 1 380px; min-width: 0; line-height: 1.6">
-<div style="color: #FFFFFF; font-weight: 600">BDM BALMEX S.A. de C.V.</div>
-<div>Av. Privada de los Industriales 110, Loc. 303/305, Edificio K1, Jurica, 76100 Querétaro, Qro., Mexico</div>
-<div>RFC: BBA2411264Q4</div>
-</div>
-</div>
-<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 32px; border-top: 1px solid #2E3338; font-size: 14px; color: #A9A49C">© 2026 BDM Balmex. All rights reserved.</div>
+</main>
+
+<footer class="site-footer">
+	<div class="site-footer__inner">
+		<div class="site-footer__brand">
+			<img src="assets/images/logo-dark.png" alt="BDM Balmex" loading="lazy" class="site-footer__logo-img">
+			<p class="site-footer__tagline" data-i18n="footer.tagline">Fertilizer trade and covered storage in Mexico</p>
+		</div>
+		<nav class="site-footer__nav" aria-label="Footer">
+			<a href="#about" class="site-footer__nav-link" data-i18n="nav.about">About</a>
+			<a href="#services" class="site-footer__nav-link" data-i18n="nav.services">Services</a>
+			<a href="#facility" class="site-footer__nav-link" data-i18n="nav.facility">Facility</a>
+			<a href="#why" class="site-footer__nav-link" data-i18n="nav.why">Why work with us</a>
+			<a href="#contact" class="site-footer__nav-link" data-i18n="nav.contact">Contact</a>
+		</nav>
+		<div class="site-footer__company">
+			<div class="site-footer__company-name">BDM BALMEX S.A. de C.V.</div>
+			<div>Av. Privada de los Industriales 110, Loc. 303/305, Edificio K1, Jurica, 76100 Querétaro, Qro., Mexico</div>
+			<div class="site-footer__tax-id">RFC: BBA2411264Q4</div>
+		</div>
+	</div>
+	<div class="site-footer__bottom-wrap">
+		<div class="site-footer__bottom">
+			<span data-i18n="footer.copyright">© 2026 BDM Balmex. All rights reserved.</span>
+			<a href="#top" class="site-footer__top-link"><span data-i18n="ui.top">Back to top</span> ↑</a>
+		</div>
+	</div>
 </footer>
 
-</div>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -768,10 +768,6 @@ a:hover {
     transition: transform 600ms var(--ease-reveal);
 }
 
-.about__image:hover {
-    transform: scale(1.02);
-}
-
 .about__caption {
     margin-top: 14px;
     font-size: 13px;
@@ -928,10 +924,6 @@ a:hover {
     min-height: 360px;
     object-fit: cover;
     transition: transform 600ms var(--ease-reveal);
-}
-
-.services__item-image:hover {
-    transform: scale(1.02);
 }
 
 .services__item-aside {

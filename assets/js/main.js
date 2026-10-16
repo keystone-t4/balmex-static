@@ -290,10 +290,12 @@
   var menuBtn = document.getElementById('menu-btn');
   var menuOpen = false;
 
+  var HEADER_SOLID_OFFSET = 150;
+  var HEADER_SOLID_OFFSET_MOBILE = 60;
+
   function updateHeaderSolid() {
-    var hero = document.getElementById('top');
-    var limit = hero ? hero.offsetHeight - 100 : 600;
-    var solid = window.scrollY > limit || menuOpen;
+    var offset = window.innerWidth <= 640 ? HEADER_SOLID_OFFSET_MOBILE : HEADER_SOLID_OFFSET;
+    var solid = window.scrollY > offset || menuOpen;
     header.classList.toggle('header--solid', solid);
   }
 
@@ -306,6 +308,7 @@
 
   function initHeader() {
     window.addEventListener('scroll', updateHeaderSolid, { passive: true });
+    window.addEventListener('resize', updateHeaderSolid, { passive: true });
     updateHeaderSolid();
 
     menuBtn.addEventListener('click', function () {

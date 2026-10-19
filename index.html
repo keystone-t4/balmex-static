@@ -101,8 +101,8 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="preload" href="assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Archivo-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -113,8 +113,8 @@
 	<div class="header__inner">
 		<a href="#top" class="header__logo" aria-label="BDM Balmex">
 			<span class="header__logo-wrap">
-				<img src="assets/images/logo-light.png" alt="BDM Balmex" class="header__logo-img header__logo-img--light">
-				<img src="assets/images/logo-dark.png" alt="" aria-hidden="true" class="header__logo-img header__logo-img--dark">
+				<img src="assets/images/logo-light.png" alt="BDM Balmex" width="460" height="66" class="header__logo-img header__logo-img--light">
+				<img src="assets/images/logo-dark.png" alt="" aria-hidden="true" width="460" height="66" class="header__logo-img header__logo-img--dark">
 			</span>
 		</a>
 		<nav class="header__nav" aria-label="Main">
@@ -153,7 +153,7 @@
 
 	<section id="top" class="hero">
 		<div class="hero__frame">
-			<img src="assets/images/hero-entrance.webp" alt="BDM Balmex warehouse entrance in Veracruz" class="hero__image" fetchpriority="high" data-i18n-alt="alt.hero">
+			<img src="assets/images/hero-entrance.webp" alt="BDM Balmex warehouse entrance in Veracruz" width="1536" height="1024" class="hero__image" fetchpriority="high" data-i18n-alt="alt.hero">
 			<div class="hero__overlay" aria-hidden="true"></div>
 			<div class="hero__content">
 				<p class="hero__eyebrow">
@@ -223,7 +223,7 @@
 			</div>
 			<figure class="about__media reveal">
 				<div class="about__image-frame">
-					<img src="assets/images/about-aerial.webp" alt="Aerial view of the Balmex warehouse complex" loading="lazy" class="about__image" data-i18n-alt="alt.about">
+					<img src="assets/images/about-aerial.webp" alt="Aerial view of the Balmex warehouse complex" loading="lazy" width="1100" height="732" class="about__image" data-i18n-alt="alt.about">
 				</div>
 				<figcaption class="about__caption" data-i18n="alt.about">Aerial view of the Balmex warehouse complex</figcaption>
 			</figure>
@@ -279,7 +279,7 @@
 
 			<article class="services__item services__item--media reveal">
 				<div class="services__item-media">
-					<img src="assets/images/storage-interior.webp" alt="Inside a covered Balmex warehouse" loading="lazy" class="services__item-image" data-i18n-alt="alt.storage">
+					<img src="assets/images/storage-interior.webp" alt="Inside a covered Balmex warehouse" loading="lazy" width="1400" height="933" class="services__item-image" data-i18n-alt="alt.storage">
 				</div>
 				<div class="services__item-aside">
 					<div class="services__item-aside-head">
@@ -331,24 +331,24 @@
 			<div class="facility__gallery-row facility__gallery-row--tall">
 				<figure class="facility__figure facility__figure--wide reveal">
 					<div class="facility__image-frame">
-						<img src="assets/images/hero-entrance.webp" alt="Warehouse facade" loading="lazy" class="facility__image" data-i18n-alt="alt.facade">
+						<img src="assets/images/hero-entrance.webp" alt="Warehouse facade" loading="lazy" width="1536" height="1024" class="facility__image" data-i18n-alt="alt.facade">
 					</div>
 				</figure>
 				<figure class="facility__figure facility__figure--narrow reveal">
 					<div class="facility__image-frame">
-						<img src="assets/images/facility-aerial.webp" alt="Aerial view of the site among green fields" loading="lazy" class="facility__image" data-i18n-alt="alt.aerial">
+						<img src="assets/images/facility-aerial.webp" alt="Access road at the warehouse complex entrance" loading="lazy" width="1100" height="733" class="facility__image" data-i18n-alt="alt.aerial">
 					</div>
 				</figure>
 			</div>
 			<div class="facility__gallery-row facility__gallery-row--short">
 				<figure class="facility__figure facility__figure--narrow reveal">
 					<div class="facility__image-frame">
-						<img src="assets/images/facility-interior.webp" alt="Bagged product stored inside the warehouse" loading="lazy" class="facility__image facility__image--crop" data-i18n-alt="alt.interior">
+						<img src="assets/images/facility-interior.webp" alt="Bagged product stored inside the warehouse" loading="lazy" width="1300" height="975" class="facility__image facility__image--crop" data-i18n-alt="alt.interior">
 					</div>
 				</figure>
 				<figure class="facility__figure facility__figure--wide reveal">
 					<div class="facility__image-frame">
-						<img src="assets/images/facility-night.webp" alt="Entrance with the BDM Balmex sign at night" loading="lazy" class="facility__image" data-i18n-alt="alt.night">
+						<img src="assets/images/facility-night.webp" alt="Entrance with the BDM Balmex sign at night" loading="lazy" width="1450" height="816" class="facility__image" data-i18n-alt="alt.night">
 					</div>
 				</figure>
 			</div>
@@ -426,7 +426,7 @@
 	</section>
 
 	<div class="facility-banner reveal">
-		<img src="assets/images/facility-front-banner.webp" alt="Warehouse facade" loading="lazy" class="facility-banner__image" data-i18n-alt="alt.facade">
+		<img src="assets/images/facility-front-banner.webp" alt="Warehouse facade" loading="lazy" width="1916" height="821" class="facility-banner__image" data-i18n-alt="alt.facade">
 	</div>
 
 	<section id="contact" class="contact">
@@ -466,7 +466,7 @@
 <footer class="site-footer">
 	<div class="site-footer__inner">
 		<div class="site-footer__brand">
-			<img src="assets/images/logo-dark.png" alt="BDM Balmex" loading="lazy" class="site-footer__logo-img">
+			<img src="assets/images/logo-dark.png" alt="BDM Balmex" loading="lazy" width="460" height="66" class="site-footer__logo-img">
 			<p class="site-footer__tagline" data-i18n="footer.tagline">Fertilizer trade and covered storage in Mexico</p>
 		</div>
 		<nav class="site-footer__nav" aria-label="Footer">

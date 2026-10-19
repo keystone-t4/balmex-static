@@ -67,7 +67,7 @@ const I18N = {
       ]
     },
     alt: {
-      aerial: 'Aerial view of the site among green fields',
+      aerial: 'Access road at the warehouse complex entrance',
       facade: 'Warehouse facade',
       interior: 'Bagged product stored inside the warehouse',
       night: 'Entrance with the BDM Balmex sign at night',
@@ -163,7 +163,7 @@ const I18N = {
       ]
     },
     alt: {
-      aerial: 'Vista aérea del complejo rodeado de áreas verdes',
+      aerial: 'Camino de acceso a la entrada del complejo de bodegas',
       facade: 'Fachada de una bodega',
       interior: 'Producto en sacos almacenado dentro de una bodega',
       night: 'Acceso al complejo con el letrero de BDM Balmex por la noche',
@@ -332,12 +332,11 @@ function initReveal() {
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
-  els.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) return;
-    el.classList.add('reveal--hidden');
-    io.observe(el);
-  });
+  // Batch all layout reads before any write to avoid forced synchronous reflow.
+  const viewportHeight = window.innerHeight;
+  const belowFold = els.filter((el) => el.getBoundingClientRect().top >= viewportHeight);
+  belowFold.forEach((el) => el.classList.add('reveal--hidden'));
+  belowFold.forEach((el) => io.observe(el));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
